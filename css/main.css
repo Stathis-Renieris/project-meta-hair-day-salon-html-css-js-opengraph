@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&family=Dancing+Script&family=Poppins:wght@400;600&display=swap");
+
+/** ------------------|| General Styles ||------------------ **/
+
+:root {
+  font-size: 87.5%;
+
+  /* Fonts */
+  --font-basic: "Poppins", sans-serif;
+  --font-heading: "Bodoni Moda", serif;
+  --font-hand: "Dancing Script", cursive;
+
+  /* Sizes normal | Ratio: 1.250 (Major Third) */
+  --size-small: 0.8rem;
+  --size-basic: 1rem;
+  --size-big: 1.25rem;
+  --size-heading-6: 1.563rem;
+  --size-heading-5: 1.953rem;
+  --size-heading-4: 2.441rem;
+  --size-heading-3: 3.052rem;
+  --size-heading-2: 3.815rem;
+  --size-heading-1: 4.768rem;
+
+  /* Colors */
+  --color-primary: #eaa87a;
+  --color-secondary: #2b2b2b;
+  --color-white: #fff;
+  --color-black: #000;
+
+  font-family: var(--font-basic);
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    font-size: 100%;
+  }
+}
+
+body {
+  line-height: 1.5;
+  font-size: var(--size-basic);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--size-heading-1);
+}
+
+h2 {
+  font-size: var(--size-heading-2);
+  position: relative;
+  max-width: max-content;
+}
+
+h3 {
+  font-size: var(--size-heading-3);
+}
+
+h4 {
+  font-size: var(--size-heading-4);
+}
+
+h5 {
+  font-size: var(--size-heading-5);
+}
+
+h6 {
+  font-size: var(--size-heading-6);
+}
+
+h2 span {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-weight: 200;
+  font-size: var(--size-heading-5);
+  position: absolute;
+  top: 80%;
+  right: -4rem;
+  color: var(--color-primary);
+  z-index: 5;
+}
+
+/** ------------------|| Header ||------------------ **/
+
+/** ------------------|| Main ||------------------ **/
+
+/** ------------------|| Main - Hero section ||------------------ **/
+
+/** ------------------|| Main - Services section ||------------------ **/
+
+/** ------------------|| Main - About section ||------------------ **/
+
+/** ------------------|| Main - Team section ||------------------ **/
+
+/** ------------------|| Main - Book section ||------------------ **/
+
+/** ------------------|| Main - Contact section ||------------------ **/
+
+/** ------------------|| Footer ||------------------ **/
