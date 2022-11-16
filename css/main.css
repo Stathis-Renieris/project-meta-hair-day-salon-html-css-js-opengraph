@@ -21,6 +21,11 @@
   --size-heading-2: 3.815rem;
   --size-heading-1: 4.768rem;
 
+  /* z-indexes */
+  --z-header: 100;
+  --z-hamburger: 150;
+  --z-menu-overlay: 120;
+
   /* Colors */
   --color-primary: #eaa87a;
   --color-secondary: #2b2b2b;
@@ -28,6 +33,7 @@
   --color-black: #000;
 
   font-family: var(--font-basic);
+  scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 600px) {
@@ -41,6 +47,10 @@ body {
   font-size: var(--size-basic);
   background-color: var(--color-secondary);
   color: var(--color-white);
+}
+
+a {
+  text-decoration: none;
 }
 
 h1,
@@ -87,14 +97,245 @@ h2 span {
   font-size: var(--size-heading-5);
   position: absolute;
   top: 80%;
-  right: -4rem;
+  right: 1rem;
   color: var(--color-primary);
   z-index: 5;
 }
 
+.fluid-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .fluid-container {
+    width: 700px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .fluid-container {
+    width: 991px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fluid-container {
+    width: 1100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .fluid-container {
+    width: 1200px;
+  }
+}
+
 /** ------------------|| Header ||------------------ **/
 
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: var(--z-header);
+}
+
+header::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4.5rem;
+  z-index: -5;
+  backdrop-filter: blur(15px);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: var(--z-header);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  order: 1;
+}
+
+.logo a {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.main-navigation {
+  order: 2;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-menu-overlay);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(25px);
+  transform: translateX(100%);
+  transition: all 0.3s;
+  font-family: var(--font-heading);
+}
+
+.main-navigation menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.main-navigation a {
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.main-navigation a:link,
+.main-navigation a:visited {
+  color: var(--color-white);
+}
+
+.main-navigation a:hover,
+.main-navigation a:active {
+  color: var(--color-primary);
+}
+
+.hamburger {
+  order: 4;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  z-index: var(--z-hamburger);
+}
+
+.hamburger img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.close-icon {
+  display: none;
+}
+
+.show-main-navigation {
+  transform: translateX(0);
+}
+
+.header-contact {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    order: 3;
+    font-size: var(--size-small);
+    gap: 2rem;
+  }
+
+  .header-email,
+  .header-phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .header-contact a:link,
+  .header-contact a:visited,
+  .header-contact a:active {
+    color: var(--color-primary);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header::after {
+    height: 5.5rem;
+  }
+
+  .header-container {
+    justify-content: flex-start;
+    padding: 1.5rem 0;
+    gap: 3rem;
+  }
+
+  .logo {
+    width: 4rem;
+  }
+
+  .main-navigation {
+    order: 2;
+    position: initial;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: none;
+    transform: none;
+    transition: none;
+    font-family: var(--font-basic);
+  }
+
+  .main-navigation menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .main-navigation a {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .header-contact {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
+
 /** ------------------|| Main ||------------------ **/
+
+main {
+  height: 2000px;
+}
 
 /** ------------------|| Main - Hero section ||------------------ **/
 
