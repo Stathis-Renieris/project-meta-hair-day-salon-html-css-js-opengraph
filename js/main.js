@@ -1,3 +1,7 @@
+import { Gradient } from "./gradient.js";
+
+//**************** Sidebar menu functionality:
+
 const mainNavigation = document.querySelector(".main-navigation");
 const menuItems = document.querySelectorAll(".menu-item");
 const hamburger = document.querySelector(".hamburger");
@@ -22,3 +26,10 @@ function toggleMenu() {
 hamburger.addEventListener("click", toggleMenu);
 
 menuItems.forEach((menuItem) => menuItem.addEventListener("click", toggleMenu));
+
+//**************** Hero section stripe animated background:
+// Create your instance
+const gradient = new Gradient();
+
+// Call `initGradient` with the selector to your canvas
+gradient.initGradient("#gradient-canvas");
