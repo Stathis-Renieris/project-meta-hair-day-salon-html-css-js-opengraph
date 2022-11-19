@@ -124,8 +124,8 @@ h6 {
 #team-section,
 #book-section,
 #contact-section {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   scroll-margin-top: 6rem;
 }
 
@@ -400,7 +400,7 @@ main {
 
 .hero-message {
   width: 25%;
-  /* z-index: 2; */
+  z-index: 2;
 }
 
 .hero-message h2 {
@@ -658,7 +658,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .carousel-container {
@@ -680,6 +680,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s;
   z-index: 10;
 }
 
@@ -785,6 +786,227 @@ main {
 
 /** ------------------|| Main - About section ||------------------ **/
 
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.about-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 3rem;
+}
+
+.info-title {
+  grid-column: 1;
+  max-width: 600px;
+}
+
+.info-title h3 {
+  font-size: 1.7rem;
+}
+
+.info-text {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.info-text p {
+  line-height: 1.8;
+  position: relative;
+}
+
+.info-images {
+  grid-column: 1;
+  position: relative;
+}
+
+.info-images img:nth-child(1),
+.info-images img:nth-child(2),
+.info-images img:nth-child(3) {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+}
+
+.info-images img:nth-child(1) {
+  width: 40%;
+}
+
+.info-images img:nth-child(2) {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.info-images img:nth-child(3) {
+  width: 25%;
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+.brands {
+  display: none;
+}
+
+.why-us-container {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.why-us-image {
+  align-self: center;
+}
+
+.why-us-image img {
+  width: 100%;
+  max-width: 300px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.why-us-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.why-us-reasons h4 {
+  font-size: 1.6rem;
+}
+
+.reasons-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.reason-item {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reason-item:nth-child(odd) {
+  border: 1px solid var(--color-footer);
+  border-radius: 10px;
+}
+
+.reason-item:nth-child(even) {
+  background-color: var(--color-footer);
+  border-radius: 10px;
+}
+
+.reason-item p:first-child {
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .about-info {
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .info-title {
+    grid-row: 1;
+  }
+
+  .info-text {
+    grid-row: 2;
+  }
+
+  .info-text p:nth-child(1) {
+    left: 5rem;
+  }
+
+  .info-text p:nth-child(2) {
+    left: 10rem;
+  }
+
+  .info-images {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .brands {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brands img {
+    display: block;
+    width: 20%;
+    max-width: 150px;
+  }
+
+  .brands img:last-child {
+    width: 10%;
+  }
+
+  .why-us-container {
+    margin-top: 0;
+    flex-direction: row;
+  }
+
+  .why-us-image {
+    flex: 1;
+    align-self: flex-start;
+  }
+
+  .why-us-reasons {
+    flex: 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .info-text p:nth-child(1),
+  .info-text p:nth-child(2) {
+    left: 0;
+  }
+
+  .info-images {
+    grid-row: 1 / span 2;
+  }
+
+  .brands {
+    margin-top: 2rem;
+    justify-content: space-evenly;
+  }
+
+  .why-us-reasons {
+    flex: 3;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .brands {
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .brands {
+    margin-top: 8rem;
+  }
+}
+
 /** ------------------|| Main - Team section ||------------------ **/
 
 /** ------------------|| Main - Book section ||------------------ **/
@@ -797,6 +1019,43 @@ footer {
   background-color: var(--color-footer);
   width: 100%;
   position: relative;
+  margin-top: 7rem;
+}
+
+@media screen and (min-width: 600px) {
+  footer {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    margin-top: 13rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    margin-top: 16rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  footer {
+    margin-top: 19rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  footer {
+    margin-top: 22rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  footer {
+    margin-top: 27rem;
+  }
 }
 
 .footer-divider {
